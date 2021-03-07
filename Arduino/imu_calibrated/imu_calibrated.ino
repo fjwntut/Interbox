@@ -60,11 +60,11 @@ void loop() {
   if (uduino.isConnected()) {
 
     // Unity play進行0度矯正
-    if(!uc){
-        IMU.calibrateGyro();
-        angleDoor = 0;
-        angleBox = 0;
-        uc = true;
+    if (!uc) {
+      IMU.calibrateGyro();
+      angleDoor = 0;
+      angleBox = 0;
+      uc = true;
     }
 #endif
 
@@ -100,9 +100,7 @@ void loop() {
     // 門的角度矯正：如果開門的話就把角度設成0
     if (digitalRead(doorPin) == 1) {
       doorCC++;
-      if (doorCC == denoise) {
-        angleDoor = 0;
-      }
+      angleDoor = 0;
     }
     else {
       doorCC = 0;
@@ -116,5 +114,5 @@ void loop() {
 #endif
   }
 #endif
-    delay(50);
+  delay(50);
 }

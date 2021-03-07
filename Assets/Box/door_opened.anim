@@ -33,7 +33,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Intensity
-    path: Empty/Cube.006/hourglass/Point Light (2)
+    path: Cover/2Door/hourglass/Point Light (1)
     classID: 108
     script: {fileID: 0}
   - curve:
@@ -52,7 +52,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Intensity
-    path: Empty/Cube.006/hourglass/Point Light (1)
+    path: Cover/2Door/hourglass/Point Light (2)
     classID: 108
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -64,14 +64,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 184151005
+      path: 622291484
       attribute: 898800009
       script: {fileID: 0}
       typeID: 108
       customType: 25
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 567588894
+      path: 238696927
       attribute: 898800009
       script: {fileID: 0}
       typeID: 108
@@ -115,7 +115,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Intensity
-    path: Empty/Cube.006/hourglass/Point Light (2)
+    path: Cover/2Door/hourglass/Point Light (1)
     classID: 108
     script: {fileID: 0}
   - curve:
@@ -134,7 +134,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Intensity
-    path: Empty/Cube.006/hourglass/Point Light (1)
+    path: Cover/2Door/hourglass/Point Light (2)
     classID: 108
     script: {fileID: 0}
   m_EulerEditorCurves: []
