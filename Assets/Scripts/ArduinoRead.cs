@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Uduino;
+using UnityEngine.UI;
 
 public class ArduinoRead : MonoBehaviour
 {
-    public bool calibrate;
+    public Text boxDisplay;
+    public Text doorDisplay;
     public Vector3Int boxMultiplier = new Vector3Int(1, 0, 0);
     Quaternion boxInitPos;
     float boxAngle;
@@ -42,7 +44,8 @@ public class ArduinoRead : MonoBehaviour
         doorAngle = float.Parse(data[1]);
         door.localRotation = DoorInitPos * Quaternion.Euler(new Vector3(doorAngle * doorMultiplier.x, doorAngle * doorMultiplier.y, doorAngle * doorMultiplier.z));
         transform.rotation = boxInitPos * Quaternion.Euler(new Vector3(boxAngle * boxMultiplier.x, boxAngle * boxMultiplier.y, boxAngle * boxMultiplier.z));
-        Debug.Log($"box rotation: {boxAngle}; door rotation: {doorAngle}");
+        boxDisplay.text = ($"box rotation: {boxAngle}");
+        doorDisplay.text = ($"door rotation: {doorAngle}");
     }
     private void Update()
     {

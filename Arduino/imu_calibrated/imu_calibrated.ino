@@ -14,17 +14,18 @@ float angleDoor, angleBox;
 // 矯正參數
 int doorPin = 16; //門矯正點的pin，D0
 int boxPins[] = {15, 13, 12, 14}; //0，90，180，270矯正點的pin，D8 D7 D6 D5
-int denoise = 10;
 int pinsCount, boxCC, doorCC; //儲存箱子矯正點的數量，
 
 // Uduino 參數
-#define UDUINO 1// 0: No uduino; 1: Uduino-Serial; 2: Uduino-WiFi
+#define UDUINO 2// 0: No uduino; 1: Uduino-Serial; 2: Uduino-WiFi
 #if UDUINO == 1
 #include "Uduino.h"
 Uduino uduino("SerialMode");
 #elif UDUINO == 2
 #include "Uduino_Wifi.h"
 Uduino_Wifi uduino("WifiMode");
+String ssid = "jw";
+String pw = "hahahaha";
 #endif
 bool uc;
 
@@ -37,6 +38,7 @@ void setup() {
   pinsCount = sizeof(boxPins) / sizeof(boxPins[0]);
   for (int i = 0; i < pinsCount; i++) {
     pinMode(boxPins[i], INPUT);
+    
   }
 
 #if UDUINO == 2
@@ -75,6 +77,9 @@ void loop() {
       GyroXYZ[0] = IMU.getGyroX_rads();
       GyroXYZ[1] = IMU.getGyroY_rads();
       GyroXYZ[2] = IMU.getGyroZ_rads();
+    }
+    else{
+      Serial.println("imu not connected");
     }
 
     // 計算角度
